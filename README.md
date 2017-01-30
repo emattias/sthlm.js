@@ -1,3 +1,9 @@
+##Slides
+
+The slides can be seen at [wrapp.com/sthlm.js](https://wrapp.com/sthlm.js).
+
+##Create React App Readme
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
