@@ -77,13 +77,36 @@ class App extends Component {
                   onLoad: {
                     duration: 2000,
                   },
-                  //onEnter: { duration: 500 }
                 }
               }
             />
             {/*<VictoryArea/>*/}
             {/*<VictoryScatter />*/}
-            {/*<VictoryVoronoiTooltip style={sthlmJs.voronoi.style} />*/}
+
+            {/* A Voronoi diagram is a partitioning of a plane into regions based on distance to points. It's math, it works! */}
+            <VictoryVoronoiTooltip
+              style={sthlmJs.voronoi.style}
+              /*events={[
+                {
+                  target: 'data',
+                  eventHandlers: {
+                    onClick: () => {
+                      return [{
+                        target: 'data',
+                        mutation: ({ style }) => {
+                          return {
+                            style: {
+                              ...style,
+                              stroke: '#333',
+                            }
+                          }
+                        }
+                      }];
+                    }
+                  }
+                }
+              ]}*/
+            />
           </VictoryGroup>
           <VictoryAxis
             tickCount={19}
