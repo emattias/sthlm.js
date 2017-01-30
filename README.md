@@ -1,7 +1,7 @@
 # Sthlm.js Demo Project
-This is the demo project I used for my presentation at sthlm.js meetup at 2017-01-30.
+This is the demo project I used for my presentation "React :heart: D3. Get the best out of both worlds (using Victory.js)" that I presented at the sthlm.js meetup 2017-01-30.
 
-Here are the [slides](http://rawgithub.com/emattias/sthlm.js/master/slides/index.html)
+Here are the [slides](http://rawgithub.com/emattias/sthlm.js/master/slides/index.html).
 
 ##Create React App Readme
 
