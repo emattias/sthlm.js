@@ -10,6 +10,7 @@ import {
   VictoryZoom,
 } from 'victory'
 import { getTime, format, parse } from 'date-fns'
+import _ from 'lodash'
 
 import csvData from '../public/data.csv'
 import './App.css';

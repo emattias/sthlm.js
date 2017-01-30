@@ -8,25 +8,48 @@ import {
   VictoryAxis,
   VictoryVoronoiTooltip,
   VictoryZoom,
+  VictoryArea
 } from 'victory'
 import { getTime, format, parse } from 'date-fns'
+import _ from 'lodash'
 
 import csvData from '../public/data.csv'
 import './App.css';
 import sthlmJs from './sthlm'
 
 
-const dataWithLabel = csvData.map((row) => {
-  return {
-    // ...row,
-    y: row.close,
-    x: getTime(parse(row.date)),
-    label: row.close
-  }
-})
-
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: this.getData()
+    }
+  }
+  // componentDidMount() {
+  //   this.setStateInterval = window.setInterval(() => {
+  //     this.setState({
+  //       data: this.getData()
+  //     });
+  //   }, 3000);
+  // }
+  //
+  // componentWillUnmount() {
+  //   window.clearInterval(this.setStateInterval);
+  // }
+
+  getData() {
+    return csvData.map((row) => {
+      return {
+        // y: _.random(0,600),
+        y: row.close,
+        x: getTime(parse(row.date)),
+        label: row.close
+      }
+    })
+  }
+
   render() {
+    const { state: { data } } = this
 
     return (
       <div className="App">
@@ -34,30 +57,33 @@ class App extends Component {
         <VictoryChart
           theme={sthlmJs}
           //domain={{y: [0, 640]}}
+          width={960}
+          height={500}
           domainPadding={{y: [20, 0]}}
           containerComponent={<VictoryContainer responsive={false} />}
         >
           <VictoryGroup
-            data={dataWithLabel}
+            {...{data}}
             /*y="close"
              x={(datum) => {
              return getTime(parse(datum.date))
              }}*/
           >
             <VictoryLine
+              data={data}
               animate={
                 {
                   easing: 'bounceInOut',
                   onLoad: {
                     duration: 2000,
-
                   },
-                  onEnter: { duration: 500 }
+                  //onEnter: { duration: 500 }
                 }
               }
             />
-            {<VictoryScatter />}
-            <VictoryVoronoiTooltip style={sthlmJs.voronoi.style} />
+            {/*<VictoryArea/>*/}
+            {/*<VictoryScatter />*/}
+            {/*<VictoryVoronoiTooltip style={sthlmJs.voronoi.style} />*/}
           </VictoryGroup>
           <VictoryAxis
             tickCount={19}
