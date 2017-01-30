@@ -1,5 +1,5 @@
 # Sthlm.js Demo Project
-This is the demo project I used for my presentation at sthlm.js meetup at 2017-01-30
+This is the demo project I used for my presentation at sthlm.js meetup at 2017-01-30.
 
 The slides can be seen at [wrapp.com/sthlm.js](https://wrapp.com/sthlm.js).
 
