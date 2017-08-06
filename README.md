@@ -3,7 +3,7 @@ This is the demo project I used for my presentation "React :heart: D3. Get the b
 
 Here are the [slides](http://rawgithub.com/emattias/sthlm.js/master/slides/index.html).
 
-##Create React App Readme
+## Create React App Readme
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
